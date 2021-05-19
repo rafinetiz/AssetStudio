@@ -15,8 +15,3 @@ jobs:
         
       - name: "Add nuGET to PATH"
         uses: nuget/setup-nuget@v1
-        
-      - name: "Building application"
-      - run: Start-Process fbxsdk.exe /S -Wait
-      - run: nuget restore
-      - run: msbuild /verbosity:minimal /p:Configuration=Release /p:Platform="Any CPU" /p:AllowedReferenceRelatedFileExtensions=".pdb"
