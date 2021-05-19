@@ -18,6 +18,7 @@ jobs:
       
       - name: "Building artifact"
         run: |
+          echo $GITHUB_WORKSPACE
           Start-Process -FilePath "fbxsdk.exe" /S -Wait
           nuget restore
           msbuild AssetStudio.sln /verbosity:minimal /p:Configuration=Release /p:Platform="Any CPU" /p:AllowedReferenceRelatedFileExtensions=".pdb"
