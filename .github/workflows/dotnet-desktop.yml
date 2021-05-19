@@ -4,5 +4,6 @@ jobs:
   Build-Artifact:
     runs-on: windows-latest
     steps:
-      - run: echo 'Hello world'
+      - name: "Checkout repository"
+        uses: actions/checkout@v2
       
