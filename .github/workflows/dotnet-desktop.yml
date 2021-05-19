@@ -22,3 +22,11 @@ jobs:
           Start-Process -FilePath "fbxsdk.exe" /S -Wait
           nuget restore
           msbuild AssetStudio.sln /verbosity:minimal /p:Configuration=Release /p:Platform="Any CPU" /p:AllowedReferenceRelatedFileExtensions=".pdb"
+      
+      - name: "Archiving artifact"
+        run: Compress-Archive -Path "${{ github.workspace }}\AssetStudioGUI\bin\Release" -DestinationPath "${{ github.workspace }}\AssetStudio.zip"
+        
+      - name: "Uploading artifacts"
+        uses: actions/upload-artifact@v2
+        with:
+          path: "${{ github.workspace }}/AssetStudio.zip"
