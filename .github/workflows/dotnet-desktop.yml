@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v2
-      - name: "Building application"
+      - name: "Add msbuild to PATH"
         uses: microsoft/setup-msbuild@v1.0.2
+      - name: "Building application"
+        run: msbuild AssetStudio.sln
