@@ -3,3 +3,6 @@ on: [push]
 jobs:
   Build-Artifact:
     runs-on: windows-latest
+    steps:
+      - run: echo 'Hello world'
+      
