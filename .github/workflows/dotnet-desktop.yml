@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: "Downloading FBXSDK"
-        run: wget "https://damassets.autodesk.net/content/dam/autodesk/www/adn/fbx/2020-0-1/fbx202001_fbxsdk_vs2017_win.exe" -OutFile fbxsdk.exe
+        run: Invoke-WebRequest "https://damassets.autodesk.net/content/dam/autodesk/www/adn/fbx/2020-0-1/fbx202001_fbxsdk_vs2017_win.exe" -OutFile fbxsdk.exe
         
       - name: "Add msbuild to PATH"
         uses: microsoft/setup-msbuild@v1.0.2
